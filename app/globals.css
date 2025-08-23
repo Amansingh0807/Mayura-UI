@@ -76,6 +76,21 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  
+  /* Custom Mayura UI Color Palette */
+  --mayura-white: #ffffff;
+  --mayura-teal-turquoise: #00aeaf;
+  --mayura-sea-blue-green: #008c9d;
+  --mayura-royal-blue: #0c4bb2;
+  --mayura-deep-teal: #006b8f;
+  --mayura-bright-turquoise: #00b0ad;
+  --mayura-cyan-teal: #00879a;
+  --mayura-emerald-turquoise: #00a7a0;
+  --mayura-blue-green: #008699;
+  --mayura-aqua-teal: #00899b;
+  --mayura-dark-cyan: #008493;
+  --mayura-deep-aqua: #008b9c;
+  --mayura-black: #000000;
 }
 
 .dark {
@@ -119,4 +134,67 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom Navbar Enhancements */
+.navbar-gradient {
+  background: linear-gradient(90deg, 
+    var(--mayura-teal-turquoise) 0%, 
+    var(--mayura-royal-blue) 50%, 
+    var(--mayura-deep-teal) 100%
+  );
+}
+
+.navbar-glow {
+  box-shadow: 
+    0 4px 20px -2px rgba(0, 174, 175, 0.15),
+    0 2px 10px -2px rgba(12, 75, 178, 0.1);
+}
+
+.navbar-text-gradient {
+  background: linear-gradient(135deg, 
+    var(--mayura-sea-blue-green), 
+    var(--mayura-royal-blue), 
+    var(--mayura-teal-turquoise)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-hover-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 174, 175, 0.1), 
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.navbar-hover-effect:hover::before {
+  left: 100%;
+}
+
+@keyframes navbar-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.navbar-pulse {
+  animation: navbar-pulse 2s ease-in-out infinite;
 }
