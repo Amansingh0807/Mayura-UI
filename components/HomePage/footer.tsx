@@ -34,19 +34,19 @@ const Footer = () => {
     {
       title: "Product",
       links: [
-        { name: "Components", href: "/components" },
-        { name: "Templates", href: "/templates" },
-        { name: "Examples", href: "/examples" },
-        { name: "Changelog", href: "/changelog" },
+        { name: "Components", href: "#" },
+        { name: "Templates", href: "#" },
+        { name: "Examples", href: "#" },
+        { name: "Changelog", href: "#" },
       ] as FooterLink[]
     },
     {
       title: "Resources",
       links: [
-        { name: "Documentation", href: "/docs" },
-        { name: "Getting Started", href: "/docs/getting-started" },
-        { name: "Design System", href: "/docs/design-system" },
-        { name: "Accessibility", href: "/docs/accessibility" },
+        { name: "Documentation", href: "#" },
+        { name: "Getting Started", href: "#" },
+        { name: "Design System", href: "#" },
+        { name: "Accessibility", href: "#" },
       ] as FooterLink[]
     },
     {
@@ -61,10 +61,10 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { name: "About", href: "/about" },
-        { name: "Blog", href: "/blog" },
-        { name: "Careers", href: "/careers" },
-        { name: "Contact", href: "/contact" },
+        { name: "About", href: "#" },
+        { name: "Blog", href: "#" },
+        { name: "Careers", href: "#" },
+        { name: "Contact", href: "#" },
       ] as FooterLink[]
     }
   ];
@@ -196,18 +196,6 @@ const Footer = () => {
                 <span>© {currentYear} Mayura UI. Made with</span>
                 <Heart className="h-4 w-4 fill-[#00aeaf] text-[#00aeaf]" />
                 <span>in India.</span>
-              </div>
-              
-              <div className="flex items-center space-x-6">
-                <Link href="/privacy" className="text-sm text-gray-400 hover:text-[#00aeaf] transition-colors cursor-pointer">
-                  Privacy
-                </Link>
-                <Link href="/terms" className="text-sm text-gray-400 hover:text-[#00aeaf] transition-colors cursor-pointer">
-                  Terms
-                </Link>
-                <Link href="/cookies" className="text-sm text-gray-400 hover:text-[#00aeaf] transition-colors cursor-pointer">
-                  Cookies
-                </Link>
               </div>
             </div>
 

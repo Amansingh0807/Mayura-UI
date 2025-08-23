@@ -104,12 +104,12 @@ const Header = () => {
           {/* Desktop Navigation - Enhanced with cursor pointer */}
           <nav className="hidden md:flex items-center space-x-1">
             {[
-              { href: "/components", label: "Components" },
-              { href: "/templates", label: "Templates" },
+              { href: "#", label: "Components" },
+              { href: "#", label: "Templates" },
               { href: "/docs", label: "Documentation" }
-            ].map((item) => (
+            ].map((item, index) => (
               <Link 
-                key={item.href}
+                key={`nav-${index}-${item.label}`}
                 href={item.href} 
                 className="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0c4bb2] dark:hover:text-[#00aeaf] transition-all duration-200 rounded-lg group cursor-pointer"
               >
@@ -219,13 +219,12 @@ const Header = () => {
                   <div className="flex-1 overflow-y-auto p-6">
                     <nav className="space-y-2">
                       {[
-                        { href: "/components", label: "Components" },
-                        { href: "/templates", label: "Templates" },
-                        { href: "/docs", label: "Documentation" },
-                        { href: "/examples", label: "Examples" }
-                      ].map((item) => (
+                        { href: "#", label: "Components" },
+                        { href: "#", label: "Templates" },
+                        { href: "#", label: "Documentation" }
+                      ].map((item, index) => (
                         <Link
-                          key={item.href}
+                          key={`mobile-nav-${index}-${item.label}`}
                           href={item.href}
                           className="block py-3 px-4 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0c4bb2] dark:hover:text-[#00aeaf] hover:bg-[#00aeaf]/5 rounded-lg transition-all duration-200 cursor-pointer"
                           onClick={() => setIsMobileMenuOpen(false)}
