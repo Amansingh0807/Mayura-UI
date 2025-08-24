@@ -61,8 +61,8 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { name: "About", href: "#" },
-        { name: "Blog", href: "#" },
+        { name: "About", href: "/about" },
+        { name: "Blog", href: "https://mayuraui.hashnode.dev/", external:true },
         { name: "Showcase", href: "#" },
         { name: "Contact", href: "#" },
       ] as FooterLink[]

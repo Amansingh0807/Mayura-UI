@@ -198,3 +198,67 @@
 .navbar-pulse {
   animation: navbar-pulse 2s ease-in-out infinite;
 }
+
+/* Floating Animation */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px) rotate(1deg);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 6s ease-in-out infinite;
+}
+
+/* Glow Effect */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 174, 175, 0.3), 0 0 40px rgba(12, 75, 178, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 174, 175, 0.5), 0 0 60px rgba(12, 75, 178, 0.3);
+  }
+}
+
+.glow-effect {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Floating Gradient */
+@keyframes gradient-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+.animate-gradient-float {
+  animation: gradient-float 4s ease-in-out infinite;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
