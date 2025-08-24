@@ -53,8 +53,8 @@ const Footer = () => {
       title: "Community",
       links: [
         { name: "GitHub", href: "https://github.com/Amansingh0807/Mayura-UI", external: true },
-        { name: "Discord", href: "#", external: true },
-        { name: "Twitter", href: "#", external: true },
+        { name: "Discord", href: "https://discord.gg/hqZAp8qaxd", external: true },
+        { name: "Twitter", href: "https://x.com/MayuraUI", external: true },
         { name: "Discussions", href: "https://github.com/Amansingh0807/Mayura-UI/discussions", external: true },
       ] as FooterLink[]
     },
@@ -63,7 +63,7 @@ const Footer = () => {
       links: [
         { name: "About", href: "#" },
         { name: "Blog", href: "#" },
-        { name: "Careers", href: "#" },
+        { name: "Showcase", href: "#" },
         { name: "Contact", href: "#" },
       ] as FooterLink[]
     }
@@ -71,9 +71,10 @@ const Footer = () => {
 
   const socialLinks = [
     { name: "GitHub", href: "https://github.com/Amansingh0807/Mayura-UI", icon: <Github className="h-5 w-5" /> },
-    { name: "Twitter", href: "#", icon: <Twitter className="h-5 w-5" /> },
+    { name: "Twitter", href: "https://x.com/MayuraUI", icon: <Twitter className="h-5 w-5" /> },
     { name: "LinkedIn", href: "#", icon: <Linkedin className="h-5 w-5" /> },
-    { name: "Email", href: "mailto:contact@mayuraui.com", icon: <Mail className="h-5 w-5" /> },
+    { name: "Email", href: "mailto:contact.mayuraui@gmail.com", icon: <Mail className="h-5 w-5" /> },
+    //"mailto:contact@mayuraui.com"    Can't afford this email as of now 
   ];
 
   return (
