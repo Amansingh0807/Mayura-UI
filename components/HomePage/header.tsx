@@ -106,7 +106,7 @@ const Header = () => {
             {[
               { href: "#", label: "Components" },
               { href: "#", label: "Templates" },
-              { href: "/docs", label: "Documentation" }
+              { href: "#", label: "Documentation" }
             ].map((item, index) => (
               <Link 
                 key={`nav-${index}-${item.label}`}
