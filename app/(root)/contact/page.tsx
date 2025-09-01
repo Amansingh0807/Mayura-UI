@@ -204,7 +204,7 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 dark:text-gray-100">Email</h3>
-                        <p className="text-gray-600 dark:text-gray-300">hello@mayuraui.com</p>
+                        <p className="text-gray-600 dark:text-gray-300">contact.mayuraui@gmail.com</p>
                       </div>
                     </div>
                   </CardContent>
@@ -217,8 +217,8 @@ const ContactPage = () => {
                         <Phone className="h-6 w-6 text-[#0c4bb2]" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 dark:text-gray-100">Phone</h3>
-                        <p className="text-gray-600 dark:text-gray-300">+1 (555) 123-4567</p>
+                        <h3 className="font-semibold text-gray-900 dark:text-gray-100">Connect on X</h3>
+                        <p className="text-gray-600 dark:text-gray-300">@mayuraui</p>
                       </div>
                     </div>
                   </CardContent>
@@ -232,7 +232,7 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 dark:text-gray-100">Location</h3>
-                        <p className="text-gray-600 dark:text-gray-300">San Francisco, CA</p>
+                        <p className="text-gray-600 dark:text-gray-300">New Delhi, India</p>
                       </div>
                     </div>
                   </CardContent>

@@ -17,14 +17,23 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useGitHubStars } from "@/hooks/use-github-stars";
+import { useTheme } from "next-themes";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark" | "system">("system");
+  const [mounted, setMounted] = useState(false);
+  
+  // Use next-themes hook
+  const { theme, setTheme } = useTheme();
   
   // Real-time GitHub stars
   const { loading, formattedStars } = useGitHubStars("Amansingh0807", "Mayura-UI");
+
+  // Ensure component is mounted before rendering theme-dependent content
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,21 +46,15 @@ const Header = () => {
 
   const toggleTheme = () => {
     const themes = ["light", "dark", "system"] as const;
-    const currentIndex = themes.indexOf(theme);
-    const nextTheme = themes[(currentIndex + 1) % themes.length];
+    const currentIndex = themes.findIndex(t => t === theme);
+    const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % themes.length;
+    const nextTheme = themes[nextIndex];
     setTheme(nextTheme);
-    
-    if (nextTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else if (nextTheme === "light") {
-      document.documentElement.classList.remove("dark");
-    } else {
-      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.classList.toggle("dark", systemDark);
-    }
   };
 
   const ThemeIcon = () => {
+    if (!mounted) return <Monitor className="h-4 w-4" />; // Default icon during SSR
+    
     switch (theme) {
       case "light": return <Sun className="h-4 w-4" />;
       case "dark": return <Moon className="h-4 w-4" />;
