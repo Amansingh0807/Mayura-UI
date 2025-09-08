@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { 
   Github, 
   Menu, 
@@ -72,10 +72,10 @@ const Header = () => {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#00aeaf]/5 via-transparent to-[#0c4bb2]/5 opacity-50" />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo Section - Fixed for high zoom levels */}
-          <Link href="/" className="group flex items-center space-x-3 py-2 cursor-pointer">
+          {/* Logo Section - Optimized for all iPad sizes */}
+          <Link href="/" className="group flex items-center space-x-2 lg:space-x-3 py-2 cursor-pointer">
             <div className="relative flex items-center justify-center min-w-[40px] min-h-[40px]">
               {/* Logo with better responsive sizing and zoom support */}
               <div className="relative overflow-hidden rounded-lg flex items-center justify-center">
@@ -84,7 +84,7 @@ const Header = () => {
                   alt="Mayura UI Logo" 
                   width={50} 
                   height={50}
-                  className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain transition-transform duration-200 group-hover:scale-110"
+                  className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 object-contain transition-transform duration-200 group-hover:scale-110"
                   style={{ minWidth: '40px', minHeight: '40px' }}
                   priority
                 />
@@ -93,19 +93,19 @@ const Header = () => {
               </div>
             </div>
             
-            {/* Brand text with perfect alignment */}
-            <div className="flex items-center space-x-2">
-              <span className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-[#008c9d] via-[#0c4bb2] to-[#00aeaf] bg-clip-text text-transparent transition-all duration-200 group-hover:from-[#00aeaf] group-hover:to-[#0c4bb2] whitespace-nowrap">
+            {/* Brand text with perfect alignment and responsive sizing */}
+            <div className="flex items-center space-x-1.5 lg:space-x-2">
+              <span className="text-lg lg:text-xl xl:text-2xl font-bold bg-gradient-to-r from-[#008c9d] via-[#0c4bb2] to-[#00aeaf] bg-clip-text text-transparent transition-all duration-200 group-hover:from-[#00aeaf] group-hover:to-[#0c4bb2] whitespace-nowrap">
                 Mayura UI
               </span>
-              <Badge className="bg-[#00aeaf]/10 text-[#008c9d] border-[#00aeaf]/20 text-xs font-medium px-2 py-0.5 hover:bg-[#00aeaf]/20 transition-colors duration-200 cursor-pointer">
+              <Badge className="bg-[#00aeaf]/10 text-[#008c9d] border-[#00aeaf]/20 text-xs font-medium px-1.5 lg:px-2 py-0.5 hover:bg-[#00aeaf]/20 transition-colors duration-200 cursor-pointer">
                 Beta
               </Badge>
             </div>
           </Link>
 
-          {/* Desktop Navigation - Enhanced with cursor pointer */}
-          <nav className="hidden md:flex items-center space-x-1">
+          {/* Desktop Navigation - Enhanced with better iPad support */}
+          <nav className="hidden lg:flex items-center space-x-1">
             {[
               { href: "#", label: "Components" },
               { href: "#", label: "Templates" },
@@ -114,7 +114,7 @@ const Header = () => {
               <Link 
                 key={`nav-${index}-${item.label}`}
                 href={item.href} 
-                className="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0c4bb2] dark:hover:text-[#00aeaf] transition-all duration-200 rounded-lg group cursor-pointer"
+                className="relative px-3 xl:px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0c4bb2] dark:hover:text-[#00aeaf] transition-all duration-200 rounded-lg group cursor-pointer"
               >
                 <span className="relative z-10">{item.label}</span>
                 {/* Hover background effect */}
@@ -125,8 +125,8 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right side actions - Enhanced styling with cursor pointers */}
-          <div className="flex items-center space-x-3">
+          {/* Right side actions - Enhanced styling with better iPad responsiveness */}
+          <div className="flex items-center space-x-2 lg:space-x-3">
             {/* Theme Toggle with custom colors */}
             <Button 
               variant="ghost" 
@@ -137,12 +137,12 @@ const Header = () => {
               <ThemeIcon />
             </Button>
 
-            {/* GitHub Stars with real-time data */}
+            {/* GitHub Stars with real-time data - Hidden on tablets for better spacing */}
             <Link
               href="https://github.com/Amansingh0807/Mayura-UI"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex cursor-pointer"
+              className="hidden xl:flex cursor-pointer"
             >
               <Button 
                 variant="outline" 
@@ -157,12 +157,12 @@ const Header = () => {
               </Button>
             </Link>
 
-            {/* GitHub Icon */}
+            {/* GitHub Icon - Show on tablets when Stars are hidden */}
             <Link
               href="https://github.com/Amansingh0807/Mayura-UI"
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer"
+              className="hidden lg:flex xl:hidden cursor-pointer"
             >
               <Button 
                 variant="ghost" 
@@ -173,20 +173,20 @@ const Header = () => {
               </Button>
             </Link>
 
-            {/* Get Started Button - Premium styling */}
-            <div className="hidden sm:block">
-              <Button className="relative overflow-hidden group bg-gradient-to-r from-[#00aeaf] to-[#0c4bb2] hover:from-[#008c9d] hover:to-[#006b8f] text-white border-0 px-6 py-2 font-medium transition-all duration-300 shadow-lg shadow-[#00aeaf]/25 hover:shadow-xl hover:shadow-[#0c4bb2]/30 cursor-pointer">
+            {/* Get Started Button - Better responsive sizing */}
+            <div className="hidden lg:block">
+              <Button className="relative overflow-hidden group bg-gradient-to-r from-[#00aeaf] to-[#0c4bb2] hover:from-[#008c9d] hover:to-[#006b8f] text-white border-0 px-4 xl:px-6 py-2 font-medium transition-all duration-300 shadow-lg shadow-[#00aeaf]/25 hover:shadow-xl hover:shadow-[#0c4bb2]/30 cursor-pointer">
                 <span className="relative z-10 flex items-center space-x-2">
-                  <span>Get Started</span>
+                  <span className="text-sm">Get Started</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#008c9d] to-[#006b8f] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Button>
             </div>
 
-            {/* Mobile Menu - Enhanced */}
+            {/* Mobile Menu - Enhanced for tablets */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-              <SheetTrigger asChild className="md:hidden">
+              <SheetTrigger asChild className="lg:hidden">
                 <Button 
                   variant="ghost" 
                   size="icon" 
@@ -196,6 +196,9 @@ const Header = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-80 p-0 bg-white dark:bg-black border-l border-[#00aeaf]/20">
+                {/* Hidden title for accessibility */}
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                
                 <div className="flex flex-col h-full">
                   {/* Mobile header */}
                   <div className="p-6 border-b border-[#00aeaf]/10 bg-gradient-to-r from-[#00aeaf]/5 to-[#0c4bb2]/5">
@@ -218,7 +221,7 @@ const Header = () => {
                     </div>
                   </div>
                   
-                  {/* Mobile navigation */}
+                  {/* Mobile/Tablet navigation */}
                   <div className="flex-1 overflow-y-auto p-6">
                     <nav className="space-y-2">
                       {[
@@ -238,7 +241,7 @@ const Header = () => {
                     </nav>
                   </div>
                   
-                  {/* Mobile footer actions */}
+                  {/* Mobile/Tablet footer actions */}
                   <div className="p-6 border-t border-[#00aeaf]/10 space-y-4">
                     <Button 
                       className="w-full bg-gradient-to-r from-[#00aeaf] to-[#0c4bb2] hover:from-[#008c9d] hover:to-[#006b8f] text-white shadow-lg cursor-pointer"
@@ -255,6 +258,9 @@ const Header = () => {
                         <Link href="https://github.com/Amansingh0807/Mayura-UI" target="_blank" className="cursor-pointer">
                           <Github className="h-4 w-4 mr-2" />
                           GitHub
+                          <Badge className="bg-[#0c4bb2]/10 text-[#0c4bb2] border-0 ml-2 text-xs cursor-pointer">
+                            {loading ? '...' : formattedStars}
+                          </Badge>
                         </Link>
                       </Button>
                       <Button 

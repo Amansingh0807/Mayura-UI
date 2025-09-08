@@ -136,6 +136,34 @@
   }
 }
 
+/* iPad Specific Optimizations */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* iPad Mini, iPad Air, iPad Pro (portrait) specific styles */
+  .navbar-responsive {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Ensure navbar items don't overflow on smaller iPads */
+  .navbar-item {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Better touch targets for iPad */
+  .navbar-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* iPad Pro landscape specific optimizations */
+@media screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .navbar-spacing {
+    gap: 0.75rem;
+  }
+}
+
 /* Custom Navbar Enhancements */
 .navbar-gradient {
   background: linear-gradient(90deg, 
