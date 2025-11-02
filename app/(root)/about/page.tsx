@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles, Heart, Code, Palette, Zap, Github, Twitter, Linkedin, Star } from "lucide-react"
 import CallToAction from "@/components/AboutPage/CallToAction";
+import Image from "next/image";
 // Custom Hugging Face Icon Component
 const HuggingFaceIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -314,8 +315,8 @@ export default function AboutPage() {
             <div className="relative">
               <Card className="p-8 bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-700 border-[#00aeaf]/20 shadow-2xl">
                 <CardContent className="text-center space-y-6">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-[#00aeaf] to-[#0c4bb2] rounded-full flex items-center justify-center mb-6">
-                    <Code className="h-16 w-16 text-white" />
+                  <div className="w-30 h-23 mx-auto bg-gradient-to-br from-[#00aeaf] to-[#0c4bb2] rounded-full flex items-center justify-center mb-6">
+                    <Image src="/Pic.jpg" alt="Profile Picture" width={140} height={140} className="rounded-full" />
                   </div>
                   
                   <div className="space-y-4">

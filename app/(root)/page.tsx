@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Zap, Star, Github } from "lucide-react";
 import { useGitHubStars } from "@/hooks/use-github-stars";
+import { Button as MayuraButton, Input as MayuraInput, Textarea as MayuraTextarea } from "@/components/mayur-ui";
+
+
 
 export default function Home() {
   // Real-time GitHub stars
@@ -89,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Preview */}
+  {/* Features Preview */}
       <section className="py-20 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -121,6 +124,33 @@ export default function Home() {
                 <p className="text-muted-foreground">{feature.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Component Playground - demo of newly added components */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto bg-background/60 backdrop-blur-sm border border-border/50 rounded-xl p-8">
+            <h2 className="text-2xl font-semibold mb-4">Component Playground</h2>
+            <p className="text-sm text-muted-foreground mb-6">A quick preview of the new vibrant Button, Input and Textarea components.</p>
+
+            <div className="grid grid-cols-1 gap-6">
+              <div>
+                <label className="block text-sm font-medium mb-2">Name</label>
+                <MayuraInput placeholder="Jane Doe" />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-2">Message</label>
+                <MayuraTextarea placeholder="Write your message..." autosize />
+              </div>
+
+              <div className="flex items-center gap-4">
+                <MayuraButton size="md">Send Message</MayuraButton>
+                <MayuraButton variant="ghost" size="md">Cancel</MayuraButton>
+              </div>
+            </div>
           </div>
         </div>
       </section>
