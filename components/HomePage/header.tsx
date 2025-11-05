@@ -107,7 +107,7 @@ const Header = () => {
           {/* Desktop Navigation - Enhanced with better iPad support */}
           <nav className="hidden lg:flex items-center space-x-1">
             {[
-              { href: "#", label: "Components" },
+              { href: "/components", label: "Components" },
               { href: "#", label: "Templates" },
               { href: "#", label: "Documentation" }
             ].map((item, index) => (
@@ -225,7 +225,7 @@ const Header = () => {
                   <div className="flex-1 overflow-y-auto p-6">
                     <nav className="space-y-2">
                       {[
-                        { href: "#", label: "Components" },
+                        { href: "/components", label: "Components" },
                         { href: "#", label: "Templates" },
                         { href: "#", label: "Documentation" }
                       ].map((item, index) => (

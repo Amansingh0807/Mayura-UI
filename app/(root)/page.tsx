@@ -24,7 +24,6 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-  CardFooter,
   MayuraTooltip,
   MayuraModal,
   MayuraModalFooter,
@@ -484,11 +483,11 @@ function TableDemo() {
   const pageSize = 3;
   
   const data = [
-    { id: 1, name: "John Doe", email: "john@example.com", role: "Admin", status: "Active" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com", role: "User", status: "Active" },
-    { id: 3, name: "Bob Johnson", email: "bob@example.com", role: "Editor", status: "Inactive" },
-    { id: 4, name: "Alice Brown", email: "alice@example.com", role: "User", status: "Active" },
-    { id: 5, name: "Charlie Wilson", email: "charlie@example.com", role: "Admin", status: "Active" },
+    { id: 1, name: "Raja", email: "raja@example.com", role: "Admin", status: "Active" },
+    { id: 2, name: "Kaki", email: "kaki@example.com", role: "User", status: "Active" },
+    { id: 3, name: "Mike Ross", email: "mr@example.com", role: "Editor", status: "Inactive" },
+    { id: 4, name: "harvey", email: "harvey@example.com", role: "User", status: "Active" },
+    { id: 5, name: "Snidhi", email: "snidhi@example.com", role: "Admin", status: "Active" },
   ];
   
   const totalPages = Math.ceil(data.length / pageSize);
